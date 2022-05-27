@@ -1,0 +1,64 @@
+<MainScreen>:
+
+    name: 'main'
+    FloatLayout:
+        size_hint: None, None
+
+    Image:
+        id: img1
+        size_hint: .75, .75
+        pos_hint: {'center_x': .5, 'center_y': .5}
+
+    DPEAButton:
+        id: start_button
+        text: 'Start'
+        font_size: self.width * .3
+        size_hint: .1, .1
+        pos_hint: {"center_x": .5, "center_y":0.1}
+        color: 0.9, 1, 0, 1
+        on_press: root.toggle_video()
+
+    DPEAButton:
+        id: test_button
+        text: '>'
+        font_size: self.width * .5
+        size_hint: .1, 1
+        pos_hint: {"x": .9, "y":0}
+        color: 0, 1, 0, 1
+        on_press: root.switch_to_right()
+
+    DPEAButton:
+        text: "<"
+        font_size: self.width * .5
+        size_hint: .1, 1
+        pos_hint: {"x": 0, "y":0}
+        color: 1, 0, 0, 1
+        on_press: root.switch_to_left()
+
+<LeftScreen>:
+
+    name: 'main'
+    FloatLayout:
+        size_hint: None, None
+
+    DPEAButton:
+        id: test_button
+        text:'back'
+        size: 100, 100
+        pos_hint: {"center_x": 0.5, "center_y":0.5}
+        color: 1, 0, 0, 1
+        on_press: root.switch_screen()
+
+<RightScreen>:
+
+    name: 'main'
+    FloatLayout:
+        size_hint: None, None
+
+    DPEAButton:
+        id: test_button
+        text:'back'
+        size: 100, 100
+        pos_hint: {"center_x": 0.5, "center_y":0.5}
+        color: 0, 1, 0, 1
+        on_press: root.switch_screen()
