@@ -1,5 +1,7 @@
 # Video App
 
+## Overview
+
 Simple Kivy UI which shows you how to playback a video on your main
 screen using cv2's VideoCapture. You can play a downloaded video or stream
 camera output using this feature.
@@ -34,3 +36,10 @@ cv2.destroyAllWindows()
 The '2' argument inside the VideoCapture initialization corresponds to the port number of the camera. Usually,
 if you are using an all-in-one computer, the computer's built-in webcam will be on port 0 and an external camera will
 be on port 1 or 2. When in doubt, try out increasing port numbers starting at 0.
+
+## Running the App
+Ensure you are using a python interpreter with Kivy installed, navigate to the VideoApp folder, and run the following
+in your terminal --
+```
+python3 VideoApp.py
+```
