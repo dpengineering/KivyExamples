@@ -14,7 +14,7 @@ MAIN_SCREEN_NAME = 'main'
 RIGHT_SCREEN_NAME = 'right'
 LEFT_SCREEN_NAME = 'left'
 
-VIDEO_PATH = '/home/soft-dev/Downloads/ball_bounce_across_stage.mp4'
+VIDEO_PATH = 'ball_bounce_across_stage.mp4'
 
 
 class ProjectNameGUI(App):
