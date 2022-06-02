@@ -1,0 +1,23 @@
+<MainScreen>:
+    name: 'main'
+
+    FloatLayout:
+        size_hint: None, None
+
+    TextInput:
+        id: text_box
+        hint_text: 'type here'
+        size_hint: .3, .2
+        pos_hint: {"center_x": .5, "center_y":0.7}
+
+    DPEAButton:
+        id: start_button
+        text: 'Reset'
+        font_size: self.width * .18
+        size_hint: .2, .1
+        pos_hint: {"center_x": .5, "center_y":0.5}
+        color: 0.9, 1, 0, 1
+        on_press: root.reset_text()
+
+
+
