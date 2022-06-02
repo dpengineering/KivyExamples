@@ -12,11 +12,8 @@ Config.set('kivy', 'keyboard_layout', 'simple')
 
 from kivy.app import App
 from kivy.core.window import Window
-from kivy.clock import Clock
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
-from kivy.uix.label import Label
-from kivy.uix.slider import Slider
 from pidev.kivy import DPEAButton
 
 SCREEN_MANAGER = ScreenManager()
@@ -47,6 +44,9 @@ class MainScreen(Screen):
     def reset_text(self):
         self.ids.text_box.text = ''
 
+    def submit_text(self):
+        print(f"Received Text: {self.ids.text_box.text}")
+        self.ids.text_box.text = ''
 
 """
 Widget additions
