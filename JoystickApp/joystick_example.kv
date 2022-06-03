@@ -1,0 +1,91 @@
+<JoystickScreen>:
+    name: 'main'
+
+    FloatLayout:
+        size_hint: None, None
+
+    Label:
+        id: x
+        text: 'X: '
+        font_size: self.width * .18
+        size_hint: .2, .1
+        pos_hint: {"center_x": .3, "center_y":0.5}
+        color: 0, 0, 0, 1
+
+    Label:
+        id: y
+        text: 'Y: '
+        font_size: self.width * .18
+        size_hint: .2, .1
+        pos_hint: {"center_x": .7, "center_y":0.5}
+        color: 0, 0, 0, 1
+
+    ImageButton:
+        id: donut_btn
+        size: (root.width + root.height)/2 * .15, (root.width + root.height)/2 * .15
+        center_x: root.width * .5 # for some reason can't use pos_hint if you want to change position in py file
+        center_y: root.height * .75
+        source: "./donut.png"
+        on_press: root.switch_screen()
+
+    Label:
+        text: 'Click Donut To Switch Screens'
+        font_size: self.width * .15
+        size_hint: .2, .1
+        pos_hint: {"x": .12, "y":0.9}
+        color: 0, 0, 0, 1
+
+    DPEAButton:
+        id: update_button
+        text: 'Manually Update'
+        font_size: self.width * .13
+        size_hint: .25, .1
+        pos_hint: {"center_x": .3, "center_y":0.3}
+        color: .5, 1, .5, 1
+        on_press: root.joy_update()
+        on_press: schedule_button.disabled = False
+        on_press: schedule_info.opacity = 1
+
+    Label:
+        id: update_info
+        text: 'Notice what happens when you repeatedly click\n on the button above while moving the joystick.'
+        font_size: 15
+        pos_hint: {"center_x": .3, "center_y":0.2}
+        color: 0, 0, 0, 1
+
+    DPEAButton:
+        id: schedule_button
+        text: 'Schedule Clock'
+        font_size: self.width * .13
+        size_hint: .25, .1
+        pos_hint: {"center_x": .7, "center_y":0.3}
+        color: 1, .5, 1, 1
+        disabled: True
+        on_press: root.schedule_joy_update()
+
+    Label:
+        id: schedule_info
+        text: 'We can schedule the Kivy Clock to do \n this \'clicking\' for us in a set time interval.'
+        font_size: 15
+        pos_hint: {"center_x": .7, "center_y":0.2}
+        color: 0, 0, 0, 1
+        opacity: 0
+
+<SecondScreen>:
+    name: 'second'
+    FloatLayout:
+        size_hint: None, None
+
+    Label:
+        text: "Joystick has no effect on this screen"
+        font_size: 30
+        pos_hint: {"center_x": .5, "center_y":0.7}
+        color: 0,0,0,1
+
+    DPEAButton:
+        id: test_button
+        text:'Return To Main Screen'
+        size_hint: .25, .1
+        pos_hint: {"center_x": 0.5, "center_y":0.5}
+        color: 1, 0, 0, 1
+        on_press: root.switch_screen()

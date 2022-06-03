@@ -24,8 +24,8 @@ Your path might change depending on where you cloned this repo as well as where 
 
 
 ## Running the App
-Ensure you are using a python interpreter with Kivy installed, navigate to the CountdownApp folder, and run the following
-in your terminal --
+Ensure you are using a python interpreter with Kivy installed, navigate to the OnScreenKeyboardApp folder, and run the 
+following in your terminal --
 ```
 python3 keyboard_example.py
 ```
