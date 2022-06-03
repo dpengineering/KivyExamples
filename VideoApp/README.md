@@ -17,7 +17,7 @@ are using. For example, your code would look similar to the following --
 ```python
 import cv2
 
-cam = cv2.VideoCapture(2, cv2.CAP_V4L)
+cam = cv2.VideoCapture(2, cv2.CAP_V4L)  # change port number (the first argument) if needed
 cam.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
 cam.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
 cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
