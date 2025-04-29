@@ -1,5 +1,8 @@
 from kivy.config import Config  # Keep these Config settings at the top
+import os
 Config.set('kivy', 'keyboard_mode', 'systemanddock')  # virtual docked keyboard plus input from real keyboard
+
+os.environ['DISPLAY'] = ":0.0" # uncomment this to run on Raspberry PI
 
 # simple.json needs to be a file inside of kivy_venv/lib/<python3>/site-packages/kivy/data/keyboards
 # for my system, this was '/home/soft-dev/packages/RaspberryPiCommon/kivy_venv/lib/python3.8/site-packages/kivy/data/keyboards'
